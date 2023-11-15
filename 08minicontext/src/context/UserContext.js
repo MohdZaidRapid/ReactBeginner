@@ -5,9 +5,8 @@ const UserContext = React.createContext();
 export default UserContext;
 
 // every context is provider
-{
-  /* <UserContext>
+
+/* <UserContext>
   <Login />
   <User />
 </UserContext>; */
-}
