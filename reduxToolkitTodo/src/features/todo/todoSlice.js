@@ -16,7 +16,16 @@ export const todoSlice = createSlice({
       state.todos.push(todo);
     },
     removeTodo: (state, action) => {
-      state.todos = todos.filter((todo) => todo.id !== action.payload);
+      state.todos = state.todos.filter((todo) => todo.id !== action.payload);
+    },
+    update: (state, action) => {
+      const todoToUpdate = state.todos.findIndex(
+        (todo) => todo.id == action.payload.id
+      );
+
+      if (todoToUpdate) {
+        todoToUpdate.text = action.payload.text;
+      }
     },
   },
 });
